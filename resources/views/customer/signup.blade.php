@@ -2,15 +2,20 @@
 
 @section('content')
 
-@if (session('status'))
-    <div class="alert alert-danger">
-        {{ session('status') }}
-    </div>
-@endif
+
+
 
 <div class="row">
 	<div class="col-xs-8 col-xs-offset-2">
-		<h1>Sign Up</h1>
+		<h1>Pendaftaran</h1>
+		<div class="flash-message">
+		  @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+		    @if(Session::has('alert-' . $msg))
+		    <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p>
+		    @endif
+		  	
+		  @endforeach
+		</div>
 		<form method="POST" action="{{ route('signup') }}">
 			{{ csrf_field() }}
 			<div class="form-group">
@@ -22,11 +27,11 @@
 			  <input type="email" class="form-control" name="email" required>
 			</div>
 			<div class="form-group">
-			  <label for="pwd">Password:</label>
+			  <label for="pwd">Kata Sandi:</label>
 			  <input type="password" class="form-control" id="pwd" name="password" required>
 			</div>
 			<div class="form-group">
-			  <label for="pwd">Confirm Password:</label>
+			  <label for="pwd">Konfirmasi Kata Sandi:</label>
 			  <input type="password" class="form-control" id="pwd" name="password_confirmation" required>
 			</div>
 

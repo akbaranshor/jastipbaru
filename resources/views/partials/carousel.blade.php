@@ -10,20 +10,20 @@
     <div class="carousel-inner">
 
       <div class="item active">
-        <img src="https://media-cdn.tripadvisor.com/media/photo-s/0e/35/34/e8/pisang-bollen.jpg" style="width:100%; height: 350px">
+        <img src="{{ asset('img/logo jastip.png') }}" style="width:100%; height: 350px">
         <div class="carousel-caption">
           
         </div>
       </div>
   		
   		<div class="item">
-        <img src="https://media-cdn.tripadvisor.com/media/photo-s/0f/d0/92/4d/images-2-largejpg.jpg" style="width:100%; height: 350px">
+        <img src="{{ asset('img/logo jastip.png') }}" style="width:100%; height: 350px">
         <div class="carousel-caption">
           
         </div>
       </div>
       <div class="item">
-        <img src="https://media-cdn.tripadvisor.com/media/photo-s/0e/35/34/e8/pisang-bollen.jpg" style="width:100%; height: 350px">
+        <img src="{{ asset('img/logo jastip.png') }}" style="width:100%; height: 350px">
         <div class="carousel-caption">
           
         </div>

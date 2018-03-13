@@ -11,5 +11,8 @@ class Store extends Model
     	'nama', 'alamat', 'src'
     ];
 
-    
+    protected function product()
+    {
+    	return $this->hasMany(Product::class);
+    }   
 }

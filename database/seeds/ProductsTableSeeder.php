@@ -12,52 +12,29 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
     		DB::table('products')->insert([
-            	'name' => 'Kacang Hijau Bollen',
+            	'name' => 'Double Cheese',
             	'price' => 47500,
             	'description' => 'Berat 450 Gram, Tinggi: 0 Cm, Lebar: 0 Cm, Panjang 0 Cm',
             	'stock' => 0,
-                'src' => 'img/Kacang_Hijau_Bollen.jpg'
+                'store_id' => 1,
+                'src' => 'https://www.mcdonalds.com.my/storage/foods/September2017/thumb2doublecheeseburger-efc3a63a9d.jpg'
         	]);
 
             DB::table('products')->insert([
-                'name' => 'Almond Cookies',
+                'name' => 'Drum Stick',
                 'price' => 57500,
                 'description' => 'Berat 180 Gram , Tinggi: 0 Cm, Lebar: 0 Cm, Panjang 0 Cm',
                 'stock' => rand(),
-                'src' => 'img/Almond_Cookies_12.jpg'
+                'store_id' => 2,
+                'src' => 'https://gzira.kfc-malta.com/binary_resources/10312466'
             ]);
 
-            DB::table('products')->insert([
-                'name' => 'Brownies Kukus Original',
-                'price' => 47500,
-                'description' => 'Berat 900 Gram , Tinggi: 0 Cm, Lebar: 0 Cm, Panjang 0 Cm',
-                'stock' => rand(),
-                'src' => 'img/Brownies_Kukus_Original2.jpg'
-            ]);
 
-            DB::table('products')->insert([
-                'name' => 'Bagelen Special Keju',
-                'price' => 51000,
-                'description' => 'Berat 273 Gram , Tinggi: 25 Cm, Lebar: 8 Cm, Panjang 20 Cm',
-                'stock' => rand(),
-                'src' => 'img/bagelen_kartika_toast_special_cheese252g'
-            ]);
+            
 
-            DB::table('products')->insert([
-                'name' => 'Bagelen Special Butter',
-                'price' => 50000,
-                'description' => 'Berat 252 Gram , Tinggi: 25 Cm, Lebar: 8 Cm, Panjang 20 Cm',
-                'stock' => rand(),
-                'src' => 'img/44.jpg'
-            ]);
-
-            DB::table('products')->insert([
-                'name' => 'Pisang Bollen Mini',
-                'price' => 4600,
-                'description' => 'Berat 700 Gram , Tinggi: 0 Cm, Lebar: 0 Cm, Panjang 0 Cm',
-                'stock' => rand(),
-                'src' => 'img/Pisang_Bollen2.jpg'
-            ]);
+            
+        
     	
+        
     }
 }

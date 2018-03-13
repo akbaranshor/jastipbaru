@@ -16,7 +16,7 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_barang')->unsigned();
-            $table->integer('id_customer')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->string('nama');
             $table->string('nama_barang');
             $table->integer('harga');
@@ -24,7 +24,7 @@ class CreateTransactionsTable extends Migration
             $table->string('tujuan');
             $table->timestamps();
 
-            $table->foreign('id_customer')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('id_barang')->references('id')->on('products');
             // $table->foreign('id_toko')->references('id')->on('stores');
 

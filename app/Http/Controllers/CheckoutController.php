@@ -10,6 +10,8 @@ use DB;
 use Nexmo;
 use App\User;
 
+use Session;
+
 class CheckoutController extends Controller
 {
     public function index()
@@ -35,7 +37,7 @@ class CheckoutController extends Controller
                 'harga' => $c->price*$c->qty,
                 'qty' => $c->qty,
                 'tujuan' => $request->alamatbaru,
-                
+                'user_id' => Auth::user()->id,
             ];
         }
 
@@ -47,6 +49,7 @@ class CheckoutController extends Controller
             'text' => 'Terima kasih '.Auth::user()->nama.', anda telah berhasil melakukan pemesanan. Untuk pesanan, bisa anda tunggu di '.$request->alamatbaru.''
         ]);
         Cart::destroy();
+        Session::flash('alert-success', 'Anda berhasil melakukan transaksi');
         return redirect('/');
     }
     public function store1($alamat)
@@ -61,6 +64,7 @@ class CheckoutController extends Controller
                 'harga' => $c->price*$c->qty,
                 'qty' => $c->qty,
                 'tujuan' => $alamat,
+                'user_id' => Auth::user()->id,
             ];
         }
 
@@ -72,6 +76,7 @@ class CheckoutController extends Controller
             'text' => 'Terima kasih '.Auth::user()->nama.', anda telah berhasil melakukan pemesanan. Untuk pesanan, bisa anda tunggu di '.$alamat.''
         ]);
         Cart::destroy();
+        Session::flash('alert-success', 'Anda berhasil melakukan transaksi');
         return redirect('/');
     }
     

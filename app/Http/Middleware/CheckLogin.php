@@ -18,9 +18,9 @@ class CheckLogin
     public function handle($request, Closure $next)
     {
         if (!Auth::check()) {
-            return redirect('/cart/list')->with('status', 'Profile updated!');;
+            Session::flash('alert-danger', ' Anda tidak bisa checkout, seharusnya anda masuk atau mendaftar terlebih dahulu');
+            return redirect('/cart/list');
         }
-
         return $next($request);
     }
 }

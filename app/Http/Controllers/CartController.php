@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \Cart as Cart;
 use App\Product;
+use Session;
 
 class CartController extends Controller
 {
@@ -30,8 +31,9 @@ class CartController extends Controller
 
         $cart = Cart::add($id, $product->name, $request->qty, $product->price);
         
+        Session::flash('alert-success', 'Anda telah menambahkan '.$request->qty.' '.$product->name);
         return redirect()->route('cart.list');
-    }
+        }
 
     /**
      * Store a newly created resource in storage.
@@ -76,6 +78,8 @@ class CartController extends Controller
     public function update(Request $request, $rowId)
     {
         Cart::update($rowId, $request->qty);
+        $item = Cart::get($rowId);
+        Session::flash('alert-success', 'Anda telah memperbarui pesanan');
         return redirect()->route('cart.list');
     }
 
@@ -87,7 +91,10 @@ class CartController extends Controller
      */
     public function remove($rowId)
     {
+        $item = Cart::get($rowId);
+        Session::flash('alert-danger', 'Anda telah menghapus '. $item->name.' dari pesanan');
         Cart::remove($rowId);
+        
         return redirect()->route('cart.list');
     }
 
@@ -96,5 +103,4 @@ class CartController extends Controller
         Cart::destroy();
         return redirect()->route('cart.list');
     }
-
 }

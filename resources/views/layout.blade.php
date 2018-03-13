@@ -9,6 +9,9 @@
 		body {
 			font-family: 'Signika', serif;
 		}
+		.alert {
+			margin-top: 16px;
+		}
 	</style>
 </head>
 <body>

@@ -1,7 +1,18 @@
 @extends('layout')
 
 @section('content')
+
+
+
 <h1><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</h1>
+
+<div class="flash-message">
+  @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+    @if(Session::has('alert-' . $msg))
+    <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p>
+    @endif
+  @endforeach
+</div>
 <div class="panel-group">
 	@foreach ($cart as $c)
 		<div class="panel panel-default">
@@ -24,7 +35,7 @@
 		<a href="{{ route('checkout.index') }}" class="btn btn-primary"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Checkout</a>
 	</div>
 @else
-	<h1>No Item</h1>
+	<h1>Keranjang Kosong</h1>
 @endif
 
 @endsection

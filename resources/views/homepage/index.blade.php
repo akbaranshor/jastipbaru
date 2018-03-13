@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+	<h1 align="center">Produk</h1>
 	@if (session('status'))
     <div class="alert alert-success">
         {{ session('status') }}
@@ -7,7 +8,7 @@
 @endif
 
 	@foreach ($products->chunk(3) as $chunk)
-    		<div class="row" style="padding-top: 30px">
+    		<div class="row" style="padding-top: 16px">
         		@foreach ($chunk as $product)
             		<div class="col-sm-4">
 						<div class="panel panel-default">

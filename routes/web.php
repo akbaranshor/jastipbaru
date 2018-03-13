@@ -12,9 +12,12 @@ use App\Http\Middleware\CheckLogin;
 |
 */
 
-Route::get('/', 'ProductController@index');
+Route::get('/', 'StoreController@index');
 Route::get('/cart/list', 'CartController@index')->name('cart.list')->middleware('web');
 Route::get('/cart/create/{id}', 'CartController@create')->name('cart.create');
+
+Route::get('/store/{id}', 'StoreController@goToProducts')->name('cart.goto');
+
 Route::get('/cart/empty', 'CartController@empty')->name('cart.empty');
 Route::get('/cart/remove/{rowId}', 'CartController@remove')->name('cart.remove');
 Route::get('/cart/update/{rowId}', 'CartController@update')->name('cart.update');

@@ -20,12 +20,12 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->integer('stock');
             $table->string('src');
-            $table->integer('id_toko')->unsigned();
+            $table->integer('store_id')->unsigned();
 
 
             $table->timestamps();
 
-            $table->foreign('id_toko')->references('id')->on('stores');
+            $table->foreign('store_id')->references('id')->on('stores');
 
             
         });
