@@ -12,18 +12,16 @@ class StoresTableSeeder extends Seeder
     public function run()
     {
         	DB::table('stores')->insert([
-            	'nama' => 'MCD',
-            	'alamat' => 'Jalan Menuju',
-                'src' => 'https://i0.wp.com/muhammad-akbar.com/wp-content/uploads/2015/11/makan-hemat-di-mcdonalds1.jpg?resize=630%2C545'
-        	]);
+                'nama' => 'Kantin Jatinangor',
+                'alamat' => 'Jl. Raya Cirebon - Bandung No.196, Cikeruh, Jatinangor, Kabupaten Sumedang, Jawa Barat 45363',
+                'src' => 'http://cdn2.tstatic.net/jabar/foto/bank/images/kantin-jatinangor_20170809_142419.jpg'
+            ]);
 
-        	DB::table('stores')->insert([
-            	'nama' => 'KFC',
-            	'alamat' => 'Jalan Pulang',
-                'src' => 'https://pbs.twimg.com/profile_images/804290535905259520/K6HVOG1O_400x400.jpg'
-        	]);
-
-
+            DB::table('stores')->insert([
+                'nama' => 'AGL',
+                'alamat' => 'Jl. Raya Jatinangor KM.21, Hegarmanah, Jatinangor, Kabupaten Sumedang, Jawa Barat 45363',
+                'src' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkDjvclRGNCEYtjbg6uqLKT2jV9SlfU2ARjU1FWmGIKleCnlMN'
+            ]);
           
     }
 }

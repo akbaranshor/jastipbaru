@@ -25,6 +25,7 @@ class CheckoutController extends Controller
             return view('checkout.index', compact('cart'));
         }
     }
+
     public function store(Request $request)
     {
 		$cart = Cart::content();
@@ -52,6 +53,7 @@ class CheckoutController extends Controller
         Session::flash('alert-success', 'Anda berhasil melakukan transaksi');
         return redirect('/');
     }
+    
     public function store1($alamat)
     {
         $cart = Cart::content();

@@ -19,13 +19,14 @@
 						<div class="panel panel-default">
 			  				<div class="panel-body">
 			  					<center>
-			  						<img src="{{ asset($store->src) }}" class="img-responsive" style="max-height: 150px; max-width: 150px">	
+			  						<img src="{{ asset($store->src) }}" class="img-responsive" style="max-height: 80px; max-width: 150px">	
 			  						<h3>{{ $store->nama }}</h3>
 			  							<form method="get" action="{{ route('cart.goto', ['id' => $store->id]) }}">
 											<div class="row">
 												<center>
 													<h5>{{ $store->alamat }}</h5>
 			  											<button type="submit" name="submit" class="btn btn-default">Pilih Tempat</button>		
+			  											<a href="{{ route('map', ['id' => $store->id]) }}" class="btn btn-default" role="button"><i class="fa fa-location-arrow" aria-hidden="true"></i> Lokasi</a>
 												</center>
 			  								</div>
 										</form>	

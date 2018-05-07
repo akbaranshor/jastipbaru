@@ -167,6 +167,8 @@ return [
         /*
          * Package Service Providers...
          */
+        Cornford\Googlmapper\MapperServiceProvider::class,
+        Marprinhm\Midtrans\MidtransServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -229,6 +231,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
+        'Midtrans' => Marprinhm\Midtrans\Facades\Midtrans::class,
+        'Veritrans' => Marprinhm\Midtrans\Facades\Veritrans::class,
 
     ],
 

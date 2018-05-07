@@ -13,6 +13,7 @@
 			margin-top: 16px;
 		}
 	</style>
+	@yield('scripts')
 </head>
 <body>
 	@include('partials.navbar')

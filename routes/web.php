@@ -13,6 +13,9 @@ use App\Http\Middleware\CheckLogin;
 */
 
 Route::get('/', 'StoreController@index');
+
+Route::get('/map/{id}', 'MapController@index')->name('map');
+
 Route::get('/cart/list', 'CartController@index')->name('cart.list')->middleware('web');
 Route::get('/cart/create/{id}', 'CartController@create')->name('cart.create');
 
@@ -39,3 +42,8 @@ Route::get('login/facebook/callback', 'UserController@handleProviderCallback');
 Route::get('/about', function() {
     return view('about');
 });
+
+Route::get('/snap', 'SnapController@snap');
+Route::post('/finish', 'SnapController@finish')->name('snapfinish');
+Route::get('/snaptoken', 'SnapController@token');
+

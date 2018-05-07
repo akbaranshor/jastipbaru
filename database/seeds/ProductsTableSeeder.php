@@ -11,23 +11,26 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-    		DB::table('products')->insert([
-            	'name' => 'Double Cheese',
-            	'price' => 47500,
-            	'description' => 'Berat 450 Gram, Tinggi: 0 Cm, Lebar: 0 Cm, Panjang 0 Cm',
-            	'stock' => 0,
+    		
+            DB::table('products')->insert([
+                'name' => 'Ayam Kentucky',
+                'price' => 7000,
+                'description' => 'Topingnya ada beragam, mulai dari suwiran ayam, potongan cakwe, kacang, telur, dan bawang goreng',
+                'stock' => rand(),
                 'store_id' => 1,
-                'src' => 'https://www.mcdonalds.com.my/storage/foods/September2017/thumb2doublecheeseburger-efc3a63a9d.jpg'
-        	]);
+                'src' => 'https://cdn.idntimes.com/content-images/community/2018/01/1516684505912-8cdd118569fcbb142ecf3471c2f457b1.jpg'
+            ]);
 
             DB::table('products')->insert([
-                'name' => 'Drum Stick',
-                'price' => 57500,
-                'description' => 'Berat 180 Gram , Tinggi: 0 Cm, Lebar: 0 Cm, Panjang 0 Cm',
+                'name' => 'Ayam Goreng',
+                'price' => 20000,
+                'description' => 'Selain ayam, dalam satu paketnya biasanya ada tumis buncis yang enak banget dan tentunya sambal yang selalu bikin nagih!',
                 'stock' => rand(),
                 'store_id' => 2,
-                'src' => 'https://gzira.kfc-malta.com/binary_resources/10312466'
+                'src' => 'https://cdn.idntimes.com/content-images/community/2018/01/16123244-391036421244074-2638224223239143424-n-c4d115f55757ca68cc67c3f6146cfc8d.jpg'
             ]);
+
+
 
 
             

@@ -12,8 +12,14 @@ return [
     |
     */
 
-    'api_key'    => function_exists('env') ? env('NEXMO_KEY', '7e036986') : 'salah',
+    /*
+
+      'api_key'    => function_exists('env') ? env('NEXMO_KEY', '7e036986') : 'salah',
     'api_secret' => function_exists('env') ? env('NEXMO_SECRET', '689149264f0e7c18') : 'salah',
+    */
+
+    'api_key'    => function_exists('env') ? env('NEXMO_KEY', 'a7eb0af2') : 'salah',
+    'api_secret' => function_exists('env') ? env('NEXMO_SECRET', 'bxT7vz2KmQvwp5z2') : 'salah',
 
     /*
     |--------------------------------------------------------------------------
